@@ -1,5 +1,5 @@
 from flask import Flask, escape, request, render_template, g, jsonify
-from driver import apa102
+from apa102_pi.driver import apa102
 
 app = Flask(__name__)
 
