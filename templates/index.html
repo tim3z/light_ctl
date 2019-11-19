@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Light Control</title>
+</head>
+<body>
+<form>
+  <label for="color">Color</label>
+  <input type="color" id="color" name="color" value="{{ color }}" onchange="fetch('/color', { method: 'POST', body: new FormData(this.parentElement) })">
+
+  <label for="brightness">Brightness</label>
+  <input type="range" id="brightness" name="brightness" min="0" max="100" value="{{ brightness }}" onchange="fetch('/brightness', { method: 'POST', body: new FormData(this.parentElement) })">
+
+  <button type="button" onclick="fetch('/shutdown', { method: 'POST' })">
+    Power-Off
+  </button>
+</form>
+</body>
+</html>
